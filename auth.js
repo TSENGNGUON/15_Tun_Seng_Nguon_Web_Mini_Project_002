@@ -14,7 +14,8 @@ export const { auth, signOut, signIn } = NextAuth({
       authorize: async (credentials) => {
         const { email, password } = credentials;
         const res = await loginService({ email, password });
-        log("res auth.js: ", res)
+        log("res auth.js: ", res);
+        
         return res;
       },
     }),
@@ -25,7 +26,8 @@ export const { auth, signOut, signIn } = NextAuth({
     },
     async session(props) { 
         const { token } = props;
-        return token.token.user;
+        const session = token.token.user;
+        return session;
     }
   },
   strategy: "jwt",

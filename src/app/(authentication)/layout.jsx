@@ -15,6 +15,7 @@ export default function AuthenticationLayout({ children }) {
       <body className="text-charcoal">
         <div className="container mx-auto my-12">
           <Logo />
+
         </div>
 
         {children}
